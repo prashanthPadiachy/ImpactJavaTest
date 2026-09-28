@@ -85,7 +85,7 @@ public class AppTest {
         );
 
         assertEquals(
-                "2, 4, 6, 9, 41",
+                "2-4, 7, 12-13, 40, 51-52",
                 result
         );
     }

@@ -10,11 +10,12 @@ public class App implements NumberRangeSummarizer{
         //FOR TESTING right now
         App app = new App();
 
-        Collection<Integer> numbers = app.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31");
+        Collection<Integer> numbers = app.collect("");
 
         String result = app.summarizeCollection(numbers);
 
         System.out.println(result);
+        System.out.println("DONE");
     }
 
     @Override 
@@ -23,11 +24,15 @@ public class App implements NumberRangeSummarizer{
 
         List<Integer> nums = new ArrayList<>();
 
+        if(input == null || input.trim().isEmpty()){
+            return nums;
+        }
+
         String[] numArray = input.split(",");
 
         for (String number: numArray)
             {
-                nums.add(Integer.parseInt(number));
+                nums.add(Integer.parseInt(number.trim()));
             }
 
         return nums;
@@ -37,6 +42,10 @@ public class App implements NumberRangeSummarizer{
     public String summarizeCollection(Collection<Integer> input)
     {
         List<Integer> nums = new ArrayList<>(input);
+
+        if(nums.isEmpty()){
+            return "";
+        }
 
         String result = "";
 
