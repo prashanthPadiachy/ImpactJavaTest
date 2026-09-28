@@ -63,6 +63,16 @@ public class App implements NumberRangeSummarizer{
                 end = cur;
             }
         }
+
+        //Code repetition to add final number or range to result
+        if(result.isEmpty() == false){
+            result+= ", ";
+        }
+        if (start==end) {
+            result+= start;
+        }else{
+            result += start+"-"+end;
+        }
         
         return result;
     }
