@@ -12,12 +12,12 @@ public class App implements NumberRangeSummarizer{
         App app = new App();
 
         System.out.println("Enter a list of numbers separated by commas (','):");
-        String input = scanner.nextLine();
+        String input = sc.nextLine();
 
         try {
             System.out.println(app.summarizeCollection(app.collect(input)));
         } catch (Exception e) {
-            System.out.println("Input Error, Invalid Input");
+            System.out.println("Invalid input, input must only contain integers separated by commas");
         }
         sc.close();
     }
@@ -34,10 +34,15 @@ public class App implements NumberRangeSummarizer{
 
         String[] numArray = input.split(",");
 
+        try{
         for (String number: numArray)
             {
                 nums.add(Integer.parseInt(number.trim()));
             }
+        }
+        catch (NumberFormatException e){
+            throw new IllegalArgumentException("Invalid input, input must only contain integers separated by commas");
+        }
 
         return nums;
     }
