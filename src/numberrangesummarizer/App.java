@@ -3,19 +3,23 @@ package numberrangesummarizer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Scanner;
 
 public class App implements NumberRangeSummarizer{
     public static void main(String[] args) throws Exception {
         
-        //FOR TESTING right now
+        Scanner sc = new Scanner(System.in);
         App app = new App();
 
-        Collection<Integer> numbers = app.collect(" ");
+        System.out.println("Enter a list of numbers separated by commas (','):");
+        String input = scanner.nextLine();
 
-        String result = app.summarizeCollection(numbers);
-
-        System.out.println(result+"I");
-        System.out.println("DONE");
+        try {
+            System.out.println(app.summarizeCollection(app.collect(input)));
+        } catch (Exception e) {
+            System.out.println("Input Error, Invalid Input");
+        }
+        sc.close();
     }
 
     @Override 
