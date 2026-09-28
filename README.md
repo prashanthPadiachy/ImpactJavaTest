@@ -1,18 +1,31 @@
-## Getting Started
+## Impact Java Take Home Test
+## By Prashanth Padiachy
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Implementation of the provided NumberRangeSummarizer Interface
 
-## Folder Structure
+The program takes a comma-separated list of integers and summarizes consecutive numbers as ranges.
 
-The workspace contains two folders by default, where:
+Example:
+    Sample Input: "1,3,6,7,8,12,13,14,15,21,22,23,24,31"
+    Result: "1, 3, 6-8, 12-15, 21-24, 31"
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Requirements
+Java 8 or later
+Apache Maven
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Implementation
+App.java implements the given interface, NumberRangeSummarizer.java
+    collect(String input) converts the input into a list of integers.
+    summarizeCollection(Collection<Integer> input) groups consecutive numbers into ranges and returns the summarized string.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+The main method in App.java accepts input from the terminal and performs collect and summarizeCollection on that input
+Empty inputs and whitespaces are handled by the program
 
-## Dependency Management
+Unit Testing is done through the AppTest.java class
+These can be run using 'mvn test' 
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Assumptions:
+
+1. The order of the input is preserved; the implementation does not sort the values. Thus, consecutive ranges are identified according to the order in which the numbers are given. (i.e the program will not sort the inputted list before summarizing the ranges)
+2. Whitespaces are allowed surrounding numbers and commas
+
