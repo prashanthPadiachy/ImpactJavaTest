@@ -39,11 +39,11 @@ public class AppTest {
         App app = new App();
 
         String result = app.summarizeCollection(
-                app.collect("")
+                app.collect(" ")
         );
 
         assertEquals(
-                "  ",
+                "",
                 result
         );
     }

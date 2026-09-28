@@ -10,11 +10,11 @@ public class App implements NumberRangeSummarizer{
         //FOR TESTING right now
         App app = new App();
 
-        Collection<Integer> numbers = app.collect("");
+        Collection<Integer> numbers = app.collect(" ");
 
         String result = app.summarizeCollection(numbers);
 
-        System.out.println(result);
+        System.out.println(result+"I");
         System.out.println("DONE");
     }
 
